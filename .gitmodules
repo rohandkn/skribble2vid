@@ -1,3 +1,6 @@
 [submodule "sketch2vid/rife"]
 	path = sketch2vid/rife
 	url = https://github.com/rohandkn/frame-interop.git
+[submodule "sketch2vid/vid2vid"]
+	path = sketch2vid/vid2vid
+	url = https://github.com/rohandkn/skribble-to-vid.git
