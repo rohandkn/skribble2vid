@@ -1,8 +1,9 @@
 import sys
 import os
 sys.path.append("/home/mverghese/Documents/vignesh-VLR/sketch2vid/vid2vid")
-sys.path.append("/home/mverghese/Documents/vignesh-VLR/sketch2vid/arXiv2020-RIFE")
+sys.path.append("/home/mverghese/Documents/vignesh-VLR/sketch2vid/rife")
 from run_tests import video2video
+from inference_video import run_infer
 from moviepy.editor import ImageSequenceClip
 import subprocess
 input_vid = "input.mp4"
@@ -38,11 +39,8 @@ images_to_video_new(image_path, skribble_anim)
 input_vid = skribble_anim
 output_vid = "output.mp4"
 #video2video(input_vid, output_vid, prompt)
-
-my_env = os.environ.copy()
-my_env["PATH"] = "/home/mverghese/Documents/vignesh-VLR/sketch2vid/arXiv2020-RIFE" + my_env["PATH"]
-result = subprocess.Popen(['env/bin/python', 'arXiv2020-RIFE/inference_video.py', '--exp=5', '--video=vid2vid/output.mp4', '--fps=20', '--skip'], env=my_env, stdout=subprocess.PIPE)
-print(result.stdout)
+args = {"video": "output.mp4", "fps": 1, "exp": 4}
+run_infer(args)
 
 
 
