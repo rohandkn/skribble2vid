@@ -1,0 +1,3 @@
+[submodule "sketch2vid/rife"]
+	path = sketch2vid/rife
+	url = https://github.com/rohandkn/frame-interop.git
