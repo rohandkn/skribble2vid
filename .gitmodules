@@ -10,3 +10,6 @@
 [submodule "sketch2vid/arXiv2020-RIFE"]
 	path = sketch2vid/arXiv2020-RIFE
 	url = https://github.com/hzwer/arXiv2020-RIFE
+[submodule "sketch2vid/rife-interop"]
+	path = sketch2vid/rife-interop
+	url = https://github.com/rohandkn/rife-interop.git
