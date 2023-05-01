@@ -7,3 +7,6 @@
 [submodule "sketch2vid/ECCV2022-RIFE"]
 	path = sketch2vid/ECCV2022-RIFE
 	url = https://github.com/megvii-research/ECCV2022-RIFE
+[submodule "sketch2vid/arXiv2020-RIFE"]
+	path = sketch2vid/arXiv2020-RIFE
+	url = https://github.com/hzwer/arXiv2020-RIFE
