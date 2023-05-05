@@ -16,10 +16,10 @@ def generate_video(prompt, *sketches):
         sketch.save(os.path.join(input_sketches_path, f'{idx}.png'))
 
     # Run the inference_video.py script
-    subprocess.run(['python3', 'rife-interop/inference_video.py', '--img', 'input_images', '--png'], cwd='rife-interop')
+    subprocess.run(['python3', 'inference_video.py', '--img', 'input_images', '--png'], cwd='rife-interop')
 
     # Run the run_tests.py script
-    subprocess.run(['python3', 'vid2vid/run_tests.py'], cwd='vid2vid')
+    subprocess.run(['python3', 'run_tests.py'], cwd='vid2vid')
 
     # Load the output video
     output_video_path = 'vid2vid/output_vid/output.mp4'
