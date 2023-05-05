@@ -8,7 +8,7 @@ from PIL import Image
 number_of_sketch_frames = 3 #@param {type:"slider", min:1, max:7, step:1}
 
 def generate_video(prompt, *sketches):
-    input_sketches_path = 'rife-interop/input_sketches'
+    input_sketches_path = 'rife-interop/input_images'
     os.makedirs(input_sketches_path, exist_ok=True)
 
     # Save sketches as PNGs
