@@ -13,17 +13,18 @@ def generate_video(prompt, *sketches):
 
     # Save sketches as PNGs
     for idx, sketch in enumerate(sketches):
-        sketch.save(os.path.join(input_sketches_path, f'sketch_{idx}.png'))
+        sketch.save(os.path.join(input_sketches_path, f'{idx}.png'))
 
     # Run the inference_video.py script
-    subprocess.run(['python3', 'rife-interop/inference_video.py', '--img', 'input_images', '--png'])
+    subprocess.run(['python3', 'rife-interop/inference_video.py', '--img', 'input_images', '--png'], cwd='rife-interop')
 
     # Run the run_tests.py script
-    subprocess.run(['python3', 'vid2vid/run_tests.py'])
+    subprocess.run(['python3', 'vid2vid/run_tests.py'], cwd='vid2vid')
 
     # Load the output video
     output_video_path = 'vid2vid/output_vid/output.mp4'
     return output_video_path
+
 
 prompt_input = gr.inputs.Textbox(label="Enter a text prompt")
 
