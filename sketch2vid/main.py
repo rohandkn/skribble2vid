@@ -13,7 +13,9 @@ def generate_video(prompt, *sketches):
 
     # Save sketches as PNGs
     for idx, sketch in enumerate(sketches):
-        sketch.save(os.path.join(input_sketches_path, f'{idx}.png'))
+        rgb_sketch = sketch.convert('RGB')
+        rgb_sketch.save(os.path.join(input_sketches_path, f'{idx}.png'))
+
 
     # Run the inference_video.py script
     subprocess.run(['python3', 'inference_video.py', '--img', 'input_images', '--png'], cwd='rife-interop')
