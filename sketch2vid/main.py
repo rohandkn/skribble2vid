@@ -23,7 +23,7 @@ def generate_video(prompt, *sketches):
 
 
     # Run the inference_video.py script
-    subprocess.run(['python3', 'inference_video.py', '--img', 'input_images', '--png'], cwd='rife-interop')
+    subprocess.run(['python3', 'inference_video.py', '--img', 'input_images', '--png', '--exp', '2'], cwd='rife-interop')
 
     # Run the run_tests.py script
     subprocess.run(['python3', 'run_tests.py', '--prompt', prompt], cwd='vid2vid')
@@ -35,7 +35,7 @@ def generate_video(prompt, *sketches):
 
 prompt_input = gr.inputs.Textbox(label="Enter a text prompt")
 
-sketch_inputs = [gr.Sketchpad(label="Draw Here", brush_radius=3, type="pil", shape=(120, 120)) for _ in range(number_of_sketch_frames)]
+sketch_inputs = [gr.Sketchpad(label="Draw Here", brush_radius=2, type="pil", shape=(120, 120)) for _ in range(number_of_sketch_frames)]
 input_sketch = [prompt_input] + sketch_inputs
 
 output = gr.outputs.Video(label="Generated video")
